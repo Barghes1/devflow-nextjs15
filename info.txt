@@ -1,0 +1,1 @@
+Use next-themes for dark, light mode (context ===> ThemeProvide.tsx, layout.tsx)
