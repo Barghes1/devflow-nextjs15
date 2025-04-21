@@ -1,3 +1,4 @@
+import QuestionCard from "@/components/cards/QuestionCard";
 import HomeFilter from "@/components/filters/HomeFilter";
 import LocalSearch from "@/components/search/LocalSearch";
 import { Button } from "@/components/ui/button";
@@ -10,10 +11,15 @@ const questions = [
     _id: "1",
     title: "How to learn react? ",
     tags: [
-      { _id: 1, name: "React" },
-      { _id: 2, name: "JavaScript" },
+      { _id: "1", name: "React" },
+      { _id: "2", name: "JavaScript" },
     ],
-    author: { _id: 1, name: "Jhon Doe" },
+    author: {
+      _id: "1",
+      name: "Jhon Doe",
+      image:
+        "https://img.freepik.com/premium-vector/user-profile-icon-flat-style-member-avatar-vector-illustration-isolated-background-human-permission-sign-business-concept_157943-15752.jpg?semt=ais_hybrid&w=740",
+    },
     upvotes: 10,
     downvotes: 2,
     answers: 5,
@@ -24,10 +30,15 @@ const questions = [
     _id: "2",
     title: "How to learn javascript? ",
     tags: [
-      { _id: 1, name: "React" },
-      { _id: 2, name: "JavaScript" },
+      { _id: "1", name: "React" },
+      { _id: "2", name: "JavaScript" },
     ],
-    author: { _id: 1, name: "Bababoy" },
+    author: {
+      _id: "2",
+      name: "Bababoy",
+      image:
+        "https://img.freepik.com/premium-vector/user-profile-icon-flat-style-member-avatar-vector-illustration-isolated-background-human-permission-sign-business-concept_157943-15752.jpg?semt=ais_hybrid&w=740",
+    },
     upvotes: 10,
     downvotes: 2,
     answers: 5,
@@ -70,7 +81,7 @@ const Home = async ({ searchParams }: SearchParams) => {
       <HomeFilter />
       <div className="mt-10 flex w-full flex-col gap-6">
         {filteredQuestions.map((question) => (
-          <h1 key={question._id}>{question.title}</h1>
+          <QuestionCard key={question._id} question={question} />
         ))}
       </div>
     </>
