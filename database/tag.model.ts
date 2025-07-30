@@ -1,10 +1,12 @@
-import { model, models, Schema } from "mongoose";
-import { number } from "zod";
+import mongoose, { model, models, Schema } from "mongoose";
 
 export interface ITag {
+  _id: mongoose.Types.ObjectId;
   name: string;
   questions: number;
 }
+
+export interface ITagDoc extends ITag, Document {}
 
 const TagSchema = new Schema<ITag>(
   {
