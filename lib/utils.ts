@@ -14,9 +14,11 @@ export const geteDeviconClassName = (techName: String) => {
     : "devicon-devicon-plain";
 };
 
-export const getTimeStamp = (date: Date) => {
+export const getTimeStamp = (date: Date | string) => {
+  const d = typeof date === "string" ? new Date(date) : date;
+
   const now = new Date();
-  const secondsAgo = Math.floor((now.getTime() - date.getTime()) / 1000);
+  const secondsAgo = Math.floor((now.getTime() - d.getTime()) / 1000);
 
   const units = [
     { label: "year", seconds: 31536000 },
